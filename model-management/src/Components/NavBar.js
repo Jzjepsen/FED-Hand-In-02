@@ -7,7 +7,7 @@ export function NavBar(){
             Login {/* Skal ændres til noget andet */}
             </NavLink>
             <NavLink to="/addNewModel">
-                AddNewModel
+            AddNewModel
             </NavLink>
         </nav>
     );
