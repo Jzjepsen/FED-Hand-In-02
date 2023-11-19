@@ -9,12 +9,29 @@ import { useEffect, useState } from 'react';
 
 function App(){
   return (
-         <div className="App">
-          <h1>Login</h1>
-<Login></Login>
+    <Router>
+      <div className="App">
+      <h1>Model management</h1>
+      {/* <Login></Login> */}
+      <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/addNewModel" element={<AddNewModel />} />
+        </Routes>
           </div>
+    </Router>
   );
 }
+
+////Test af AddNewModel
+// function App(){
+//   return (
+//          <div className="App">
+//           <h1>Add new model page</h1>
+// <AddNewModel></AddNewModel>
+//           </div>
+//   );
+// }
+
 
 // function App() {
 //   return (
