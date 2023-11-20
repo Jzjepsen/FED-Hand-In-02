@@ -22,15 +22,14 @@ function App(){
   );
 }
 
-////Test af AddNewModel
 // function App(){
-//   return (
-//          <div className="App">
-//           <h1>Add new model page</h1>
-// <AddNewModel></AddNewModel>
-//           </div>
-//   );
-// }
+//    return (
+//           <div className="App">
+//            <h1>Add new model page</h1>
+//  <AddNewModel></AddNewModel>
+//            </div>
+//    );
+// } 
 
 
 // function App() {
