@@ -13,10 +13,13 @@ export function AddNewModel(){
     const[zip, setZip]=useState('');
     const[city, setCity]=useState('');
     const[country, setCountry]=useState('');
-    const[birthDate, setBirthDate]=useState('');
+    //const[birthDate, setBirthDate]=useState('');
+    const [birthDate, setBirthDate] = useState('');
+    const [birthTime, setBirthTime] = useState('');
+
     const[nationality, setNationality]=useState('');
-    const[height, setHeight]=useState('');
-    const[shoeSize, setShoeSize]=useState('');
+    const[height, setHeight]=useState(0);
+    const[shoeSize, setShoeSize]=useState(0);
     const[hairColor, setHairColor]=useState('');
     const[eyeColor, setEyeColor]=useState('');
     const[comments, setComments]=useState('');
@@ -25,13 +28,14 @@ export function AddNewModel(){
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        const dateTime =`${birthDate}T${birthTime}:00.000Z`; // Adding default seconds and milliseconds
         try {
-            const response = await axios.post('https://localhost:7181/api/Models', {firstName, lastName, email, phoneNo,addresLine1,addresLine2,zip,city,country,birthDate,nationality,height,shoeSize,hairColor,eyeColor,comments, password });
+            const response = await axios.post('https://localhost:7181/api/Models', {firstName, lastName, email, phoneNo,addresLine1,addresLine2,zip,city,country,birthDate:dateTime,nationality,height,shoeSize,hairColor,eyeColor,comments, password });
             localStorage.setItem('token', response.data.token);
+            console.log("Model added")
         } catch (error) {
             setError('Submit fejlede. Tjek at du har udfyldt alle de påkrævede felter.');
         }
-
     };
     return (
         <div>
@@ -67,14 +71,14 @@ export function AddNewModel(){
             required
             />
             <input
-            type="addressLine1"
+            type="addresLine1"
             value={addresLine1}
             onChange={(e)=>setAddresLine1(e.target.value)}
             placeholder="Addres Line 1"
             required
             />
             <input
-            type="addressLine2"
+            type="addresLine2"
             value={addresLine2}
             onChange={(e)=>setAddresLine2(e.target.value)}
             placeholder="Addres Line 2"
@@ -100,12 +104,17 @@ export function AddNewModel(){
             placeholder="Country"
             required
             />
+           <input
+                type="date"
+                value={birthDate}
+                onChange={(e) => setBirthDate(e.target.value)}
+                required
+            />
             <input
-            type="birthDate"
-            value={birthDate}
-            onChange={(e)=>setBirthDate(e.target.value)}
-            placeholder="Birth Date"
-            required
+                type="time"
+                value={birthTime}
+                onChange={(e) => setBirthTime(e.target.value)}
+                required
             />
             <input
             type="nationality"
