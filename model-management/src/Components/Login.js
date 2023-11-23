@@ -27,15 +27,15 @@ export function Login() {
             localStorage.setItem('token', jwt); // Store the JWT token
             const decodedToken = jwtDecode(jwt);  // Decode token using the 'jwt' variable
 
-            let Role = ''; 
+            let role = ''; 
     
-            if (typeof decodedToken !== 'string' && decodedToken && 'Role' in decodedToken) {
-                Role = decodedToken.Role; // Get role from decoded token
-            } else {
+            if(decodedToken){
+            role = decodedToken['http://schemas.microsoft.com/ws/2008/06/identity/claims/role']; // Get role from decoded token
+            }
+            if(role==''){
                 throw new Error('Invalid Token');
             }
-    
-            switch (Role) {
+            switch (role) {
                 case 'Manager':
                     navigate('/Manager');
                     break;
