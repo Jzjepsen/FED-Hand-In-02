@@ -5,10 +5,10 @@ import{AddNewModel} from './Components/AddNewModel'
 import { Manager } from './Components/Manager';
 import { AddNewJob } from './Components/AddNewJob';
 import { AddNewManager} from './Components/AddNewManager';
-import {AddExpenseToAJob} from '.Components/AddExpenseToAJob';
-import {AddModelToJob} from '.Components/AddModelToJob';
-import{DeleteModelFromJob} from '.Components/DeleteModelFromJob';
-import {Model} from '.Components/Model';
+import {AddModelToJob} from './Components/AddModelToJob';
+import{DeleteModelFromJob} from './Components/DeleteModelFromJob';
+import {Model} from './Components/Model';
+import {AddExpenseToAJob} from  './Components/AddExpenseToAJob';
 
 import './App.css';
 import './index.css';
