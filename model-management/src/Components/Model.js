@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-export function Model(){
-    return(
-<p>Model page</p>
-    );
+export function Model() {
+  return (
+    <div>
+      <p>Model page</p>
+      <Link to="/listOfJobs">Go to List of Jobs</Link>
+    </div>
+  );
 }

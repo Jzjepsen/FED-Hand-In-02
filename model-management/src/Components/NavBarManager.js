@@ -18,6 +18,9 @@ export function NavBarManager(){
             <NavLink to="/deleteModelFromJob">
                 Delete model from job
             </NavLink>
+            <NavLink to="/listOfJobs">
+                List of jobs
+            </NavLink>
         </nav>
     );
 }

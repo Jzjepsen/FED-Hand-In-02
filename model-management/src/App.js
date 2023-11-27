@@ -7,6 +7,7 @@ import { AddNewJob } from './Components/AddNewJob';
 import { AddNewManager} from './Components/AddNewManager';
 import { AddModelToJob} from  './Components/AddModelToJob';
 import { DeleteModelFromJob} from './Components/DeleteModelFromJob';
+import {ListOfJobs} from './Components/listOfJobs';
 import {Model} from './Components/Model';
 import {AddExpenseToAJob} from  './Components/AddExpenseToAJob';
 import ThemeContext from './styling/ThemeContext';
@@ -33,7 +34,9 @@ function App(){
                 <Route path="/addNewManager" element={<AddNewManager/>}/>
                 <Route path="/addNewModel" element={<AddNewModel />} />
                 <Route path="/deleteModelFromJob" element={<DeleteModelFromJob/>}/>
+                <Route path="/listOfJobs" element={<ListOfJobs/>}/>
                 <Route path="/Model" element={<Model/>}/> 
+
                 {/*Vi mangler en oversigt med alle jobs*/}
             </Routes>
           </div>
