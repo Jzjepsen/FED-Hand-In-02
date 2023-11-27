@@ -8,8 +8,18 @@
   color: white;
 }
 
+/* Add purple and yellow colors */
+.purple-text {
+  color: purple;
+}
+
+.yellow-background {
+  background-color: yellow;
+}
+
 .App {
   text-align: center;
+  padding: 20px; /* Add padding to the App container */
 }
 
 .App-logo {
@@ -32,6 +42,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 20px; /* Add padding to the App-header */
 }
 
 .App-link {
@@ -46,6 +57,7 @@
     transform: rotate(360deg);
   }
 }
+
 .table-jobs {
   width: 100%;
   border-collapse: collapse;
@@ -53,10 +65,92 @@
 
 .table-jobs th, .table-jobs td {
   border: 1px solid black;
-  padding: 8px;
+  padding: 12px; /* Increase padding for table cells */
   text-align: left;
 }
 
 .table-jobs th {
   background-color: #f2f2f2;
+}
+
+/* Add purple and yellow colors to specific elements */
+.purple-text {
+  color: purple;
+}
+
+.yellow-background {
+  background-color: yellow;
+}
+/* Form container */
+.form-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Form input fields */
+.form-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Form submit button */
+.form-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Form submit button on hover */
+.form-button:hover {
+  background-color: #0056b3;
+}
+
+/* Table container */
+.table-container {
+  max-width: 100%;
+  overflow: auto;
+}
+
+/* Table styling */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  margin-top: 20px;
+}
+
+/* Table header cells */
+.table th {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  text-align: left;
+}
+
+/* Table body rows */
+.table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+/* Add alternating row colors */
+.table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Hover effect on table rows */
+.table tr:hover {
+  background-color: #e0e0e0;
 }

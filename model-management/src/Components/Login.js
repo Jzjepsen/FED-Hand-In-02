@@ -29,10 +29,10 @@ export function Login() {
 
             let role = ''; 
     
-            if(decodedToken){
-            role = decodedToken['http://schemas.microsoft.com/ws/2008/06/identity/claims/role']; // Get role from decoded token
+            if (decodedToken) {
+                role = decodedToken['http://schemas.microsoft.com/ws/2008/06/identity/claims/role']; // Get role from decoded token
             }
-            if(role==''){
+            if (role === '') {
                 throw new Error('Invalid Token');
             }
             switch (role) {
@@ -48,35 +48,33 @@ export function Login() {
             }  
         } catch (error) {
             setError(error.message);
-        } finally{
+        } finally {
             setLoading(false);
         }
     }    
-
     return (
-        <div>
-        <h2>Login page</h2>
-        <form onSubmit={handleSubmit}>
+        <div className="form-container">
+          <h2>Login page</h2>
+          <form onSubmit={handleSubmit}>
             <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Email"
-                required
+              className="form-input" // Apply the form-input class
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email"
+              required
             />
             <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Password"
-                required
+              className="form-input" // Apply the form-input class
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
+              required
             />
-            <button type="submit">Log ind</button>
+            <button className="form-button" type="submit">Log ind</button> {/* Apply the form-button class */}
             {error && <p>{error}</p>}
-        </form>
+          </form>
         </div>
-    );
+      );
 }
-
-
-

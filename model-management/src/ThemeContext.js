@@ -1,7 +1,7 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useContext } from 'react';
 
 // Create a context for the theme
-const ThemeContext = createContext();
+export const ThemeContext = createContext();
 
 // This is a custom provider component
 export const ThemeProvider = ({ children }) => {
@@ -10,13 +10,13 @@ export const ThemeProvider = ({ children }) => {
 
   // Function to toggle the theme
   const toggleTheme = () => {
-    setTheme(currentTheme => currentTheme === 'light' ? 'dark' : 'dark');
+    setTheme((currentTheme) => (currentTheme === 'light' ? 'dark' : 'light'));
   };
 
   // The value that will be supplied to the descendants
   const contextValue = {
     theme,
-    toggleTheme
+    toggleTheme,
   };
 
   return (
@@ -25,6 +25,3 @@ export const ThemeProvider = ({ children }) => {
     </ThemeContext.Provider>
   );
 };
-
-// Export the context itself for use in other components
-export default ThemeContext;

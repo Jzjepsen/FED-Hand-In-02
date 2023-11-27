@@ -1,4 +1,6 @@
-import React from 'react';
+import { ThemeProvider } from './ThemeContext';
+import { ThemeContext } from './ThemeContext'; // Adjust the path as needed
+import React, { useContext } from 'react'; // Import 'useContext' from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { NavBarManager } from './Components/NavBarManager';
 import{AddNewModel} from './Components/AddNewModel'
@@ -10,19 +12,17 @@ import { DeleteModelFromJob} from './Components/DeleteModelFromJob';
 import {ListOfJobs} from './Components/listOfJobs';
 import {Model} from './Components/Model';
 import {AddExpenseToAJob} from  './Components/AddExpenseToAJob';
-import ThemeContext from './styling/ThemeContext';
 import './App.css';
 import './index.css';
 import { Login } from './Components/Login';
-import { useEffect, useState, useContext } from 'react';
 
 function App(){
-  const theme = useContext(ThemeContext); // Use the theme from ThemeContext
+  const { theme } = useContext(ThemeContext); // Use 'useContext' to access the theme from ThemeContext
 
   return (
-    <ThemeContext.Provider value = "dark">
+    <ThemeProvider>
       <Router>
-          <div className={`App ${theme}`}>
+      <div className={`App ${theme}`}>
             <h1>Model management</h1>
             <Routes>
                 <Route path="/" element={<Login />} />
@@ -41,7 +41,7 @@ function App(){
             </Routes>
           </div>
       </Router>
-    </ThemeContext.Provider>
+      </ThemeProvider>
   );
 }
 
