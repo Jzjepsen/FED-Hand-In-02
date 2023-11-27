@@ -6,7 +6,7 @@ import { Manager } from './Components/Manager';
 import { AddNewJob } from './Components/AddNewJob';
 import { AddNewManager} from './Components/AddNewManager';
 import { AddModelToJob} from  './Components/AddModelToJob';
-import {DeleteModelFromJob} from './Components/DeleteModelFromJob';
+import { DeleteModelFromJob} from './Components/DeleteModelFromJob';
 import {Model} from './Components/Model';
 import {AddExpenseToAJob} from  './Components/AddExpenseToAJob';
 import ThemeContext from './styling/ThemeContext';
