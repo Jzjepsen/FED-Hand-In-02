@@ -19,7 +19,7 @@ export function Login() {
     
         try {
             const response = await axios.post(
-                'https://localhost:7181/api/Account/login', 
+                'http://localhost:7181/api/Account/login', 
                 { email, password }
             );
             

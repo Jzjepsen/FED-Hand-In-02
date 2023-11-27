@@ -31,7 +31,7 @@ export function AddNewModel(){
         const dateTime =`${birthDate}T${birthTime}:00.000Z`; // Adding default seconds and milliseconds
         try {
             console.log({firstName, lastName, email, phoneNo,addresLine1,addresLine2,zip,city,country,birthDate:dateTime,nationality,height,shoeSize,hairColor,eyeColor,comments, password });
-            const response = await axios.post('https://localhost:7181/api/Models', {firstName, lastName, email, phoneNo,addresLine1,addresLine2,zip,city,country,birthDate:dateTime,nationality,height,shoeSize,hairColor,eyeColor,comments, password });
+            const response = await axios.post('http://localhost:7181/api/Models', {firstName, lastName, email, phoneNo,addresLine1,addresLine2,zip,city,country,birthDate:dateTime,nationality,height,shoeSize,hairColor,eyeColor,comments, password });
             localStorage.setItem('token', response.data.token);
             console.log("Model added")
         } catch (error) {
@@ -113,12 +113,6 @@ export function AddNewModel(){
                 required
             />
             <input
-                type="time"
-                value={birthTime}
-                onChange={(e) => setBirthTime(e.target.value)}
-                required
-            />
-            <input
             type="text"
             value={nationality}
             onChange={(e)=>setNationality(e.target.value)}
@@ -126,18 +120,18 @@ export function AddNewModel(){
             required
             />
             <input
-            type="number"
-            value={height}
-            onChange={(e)=>setHeight(e.target.value)}
-            placeholder="Height"
-            required
+                type="number"
+                value={height || ''}
+                onChange={(e) => setHeight(e.target.value)}
+                placeholder="Height"
+                required
             />
             <input
-            type="number"
-            value={shoeSize}
-            onChange={(e)=>setShoeSize(e.target.value)}
-            placeholder="Show Size"
-            required
+                type="number"
+                value={shoeSize || ''}
+                onChange={(e) => setShoeSize(e.target.value)}
+                placeholder="Shoe Size"
+                required
             />
             <input
             type="text"
