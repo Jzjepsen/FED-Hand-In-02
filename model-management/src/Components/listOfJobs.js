@@ -11,7 +11,7 @@ export function ListOfJobs() {
 
     const fetchJobs = async () => {
         try {
-            const token = localStorage.getItem('token'); // Or however you obtain the token
+            const token = localStorage.getItem('token'); 
             const response = await axios.get('http://localhost:7181/api/Jobs', {
                 headers: {
                     'Authorization': `Bearer ${token}`,

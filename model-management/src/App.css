@@ -46,3 +46,17 @@
     transform: rotate(360deg);
   }
 }
+.table-jobs {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-jobs th, .table-jobs td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+
+.table-jobs th {
+  background-color: #f2f2f2;
+}
