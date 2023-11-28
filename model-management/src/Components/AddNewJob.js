@@ -23,11 +23,12 @@ const [error, setError] = useState('');
     }
 };
     return(
-        <div>
+        <div className="container"> 
         <h2>Add a new job</h2>
-        <h3>Enter job-information in the following text-boxes:</h3>
+        <p>Enter job-information in the following text-boxes:</p>
         <form onSubmit={handleSubmit}>
             <input
+                className="form-input" 
                 type="text"
                 value={customer}
                 onChange={(e)=>setCustomer(e.target.value)}
@@ -35,18 +36,23 @@ const [error, setError] = useState('');
                 required
             />
            <input
+                className="form-input" 
                 type="date"
                 value={startDate}
                 onChange={(e) => setStartDate(e.target.value)}
                 required
             />
             <input
+                        className="form-input" 
+
                 type="time"
                 value={startTime}
                 onChange={(e) => setStartTime(e.target.value)}
                 required
             />
             <input
+                        className="form-input" 
+
                 type="number"
                 value={days}
                 onChange={(e)=>setDays(e.target.value)}
@@ -54,6 +60,8 @@ const [error, setError] = useState('');
                 required
             />
             <input
+                        className="form-input" 
+
                 type="text"
                 value={location}
                 onChange={(e)=>setLocation(e.target.value)}
@@ -61,13 +69,17 @@ const [error, setError] = useState('');
                 required
             />
             <input
+                        className="form-input" 
+
                 type="text"
                 value={comments}
                 onChange={(e)=>setComments(e.target.value)}
                 placeholder="Comments"
                 required
             />
-            <button type="submit">Add job</button>
+                <button type="submit" className="form-button">
+                Add job
+                </button>
             {error && <p>{error}</p>}
         </form>
         </div>

@@ -23,18 +23,20 @@ export function AddNewManager(){
         }
     };
     return (
-        <div>
+        <div className="container"> 
             <h2>Add a new manager</h2>
-            <h3>Enter manager-information in the following text-boxes:</h3>
-        <form onSubmit={handleSubmit}>
+            <p>Enter manager-information in the following text-boxes:</p>
+            <form onSubmit={handleSubmit} className="form-shared"> 
+                <input
+                    className="form-input" 
+                    type="text"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    placeholder="First Name"
+                    required
+                />
             <input
-            type="text"
-            value={firstName}
-            onChange={(e)=>setFirstName(e.target.value)}
-            placeholder="First Name"
-            required
-            />
-            <input
+            className="form-input" 
             type="text"
             value={lastName}
             onChange={(e)=>setLastName(e.target.value)}
@@ -42,6 +44,7 @@ export function AddNewManager(){
             required
             />
             <input
+            className="form-input" 
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -49,14 +52,17 @@ export function AddNewManager(){
             required
             />
             <input
+            className="form-input" 
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
             required
             />
-            <button type="submit">Add manager</button>
-            {error && <p>{error}</p>}
+                <button type="submit" className="form-button"> {/* Apply button styling */}
+                    Add manager
+                </button>
+                {error && <p className="error-message">{error}</p>}
         </form>
         </div>
     );

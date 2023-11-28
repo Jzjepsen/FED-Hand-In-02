@@ -2468,11 +2468,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/juliezepernickjepsen/Desktop/FED-Hand-In-02/FED-Hand-In-02/ModelsApi/ModelsApi/ModelsApi.csproj",
+      "projectUniqueName": "/Users/juliezepernickjepsen/Desktop/FED-Hand-In-02/ModelsApi/ModelsApi/ModelsApi.csproj",
       "projectName": "ModelsApi",
-      "projectPath": "/Users/juliezepernickjepsen/Desktop/FED-Hand-In-02/FED-Hand-In-02/ModelsApi/ModelsApi/ModelsApi.csproj",
+      "projectPath": "/Users/juliezepernickjepsen/Desktop/FED-Hand-In-02/ModelsApi/ModelsApi/ModelsApi.csproj",
       "packagesPath": "/Users/juliezepernickjepsen/.nuget/packages/",
-      "outputPath": "/Users/juliezepernickjepsen/Desktop/FED-Hand-In-02/FED-Hand-In-02/ModelsApi/ModelsApi/obj/",
+      "outputPath": "/Users/juliezepernickjepsen/Desktop/FED-Hand-In-02/ModelsApi/ModelsApi/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/juliezepernickjepsen/.nuget/NuGet/NuGet.Config"

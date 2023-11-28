@@ -154,3 +154,11 @@
 .table tr:hover {
   background-color: #e0e0e0;
 }
+/* App.css */
+
+.app-title {
+  font-size: 3rem; /* Example size, adjust as needed */
+  font-weight: bold;
+  margin-bottom: 1rem; /* Add some space below the title */
+  /* You can add more styling attributes here as needed */
+}

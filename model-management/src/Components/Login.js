@@ -54,7 +54,7 @@ export function Login() {
     }    
     return (
         <div className="form-container">
-          <h2>Login page</h2>
+          <h2>Login</h2>
           <form onSubmit={handleSubmit}>
             <input
               className="form-input" // Apply the form-input class

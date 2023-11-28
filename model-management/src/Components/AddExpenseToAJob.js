@@ -73,12 +73,15 @@ export function AddExpenseToAJob() {
   };
 
   return (
-    <div>
+    <div className="container"> 
       <p>Model page</p>
-      <form>
+      <form className="form-shared"> 
         <div>
           <label>Choose a Job:</label>
-          <select value={selectedJobId} onChange={handleJobChange}>
+          <select
+            className="form-select" 
+            value={selectedJobId} 
+            onChange={handleJobChange}>
             <option value="">Select a Job</option>
             {jobs.map((job) => (
               <option key={job.jobId} value={job.jobId}>
@@ -90,6 +93,7 @@ export function AddExpenseToAJob() {
         <div>
           <label>Text:</label>
           <input
+            className="form-input" 
             type="text"
             value={expenseText}
             onChange={(e) => setExpenseText(e.target.value)}
@@ -98,12 +102,13 @@ export function AddExpenseToAJob() {
         <div>
           <label>Amount:</label>
           <input
+          className="form-input" 
             type="number"
             value={expenseAmount}
             onChange={(e) => setExpenseAmount(e.target.value)}
           />
         </div>
-        <button type="button" onClick={handleAddExpense}>
+        <button type="submit" className="form-button"> 
           Add Expense
         </button>
       </form>

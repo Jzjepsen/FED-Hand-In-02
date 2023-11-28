@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zH+TuVlGY8bukOy/DFC0lFPs9OYEIihW9YkznDfcUfZSSqTQh5FY6eswsUbWidN2c3u2JOFq1dGehTtLak7Omw==",
+  "dgSpecHash": "jGrphI/fxu4UQ17niFdVYqLBuqw0f37/yQlGzubWOivspuB4eSn2T49dWIkLNfBiNTdfgeYIBW/l6NKBsi7uUw==",
   "success": true,
-  "projectFilePath": "/Users/juliezepernickjepsen/Desktop/FED-Hand-In-02/FED-Hand-In-02/ModelsApi/ModelsApi/ModelsApi.csproj",
+  "projectFilePath": "/Users/juliezepernickjepsen/Desktop/FED-Hand-In-02/ModelsApi/ModelsApi/ModelsApi.csproj",
   "expectedPackageFiles": [
     "/Users/juliezepernickjepsen/.nuget/packages/automapper/11.0.1/automapper.11.0.1.nupkg.sha512",
     "/Users/juliezepernickjepsen/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/11.0.0/automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

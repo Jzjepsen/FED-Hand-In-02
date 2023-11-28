@@ -73,13 +73,16 @@ export function DeleteModelFromJob() {
     };
 
     return (
-        <div>
+        <div className="container"> 
             <h1>Delete Model from Job</h1>
-            <form onSubmit={handleDeleteSubmit}>
+            <form onSubmit={handleDeleteSubmit} className="form-shared"> 
             <div>
                 <label>
                     Model:
-                    <select value={selectedModel} onChange={(e) => {
+                    <select 
+                    form-shared select
+                    value={selectedModel} 
+                    onChange={(e) => {
                         console.log('Selected model ID:', e.target.value); // Log the selected value
                         setSelectedModel(e.target.value);
                     }}>
@@ -95,7 +98,10 @@ export function DeleteModelFromJob() {
                 <div>
                     <label>
                         Job:
-                        <select value={selectedJob} onChange={(e) => {
+                        <select 
+                        form-shared select
+                        value={selectedJob} 
+                        onChange={(e) => {
                             console.log('Selected job ID:', e.target.value);
                             setSelectedJob(e.target.value);
                         }}>

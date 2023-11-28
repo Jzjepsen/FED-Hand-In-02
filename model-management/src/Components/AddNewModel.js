@@ -40,11 +40,12 @@ export function AddNewModel(){
         }
     };
     return (
-        <div>
+        <div className="container"> 
             <h2>Add a new model</h2>
-            <h3>Enter model-information in the following text-boxes:</h3>
-        <form onSubmit={handleSubmit}>
+            <p>Enter model-information in the following text-boxes:</p>
+        <form onSubmit={handleSubmit}className="form-shared"> 
             <input
+            className="form-input" 
             type="text"
             value={firstName}
             onChange={(e)=>setFirstName(e.target.value)}
@@ -52,6 +53,7 @@ export function AddNewModel(){
             required
             />
             <input
+            className="form-input" 
             type="text"
             value={lastName}
             onChange={(e)=>setLastName(e.target.value)}
@@ -59,6 +61,7 @@ export function AddNewModel(){
             required
             />
             <input
+            className="form-input" 
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -66,6 +69,7 @@ export function AddNewModel(){
             required
             />
             <input
+            className="form-input" 
             type="tel"
             value={phoneNo}
             onChange={(e)=>setPhoneNo(e.target.value)}
@@ -73,6 +77,7 @@ export function AddNewModel(){
             required
             />
             <input
+            className="form-input" 
             type="text"
             value={addresLine1}
             onChange={(e)=>setAddresLine1(e.target.value)}
@@ -80,12 +85,14 @@ export function AddNewModel(){
             required
             />
             <input
+            className="form-input" 
             type="text"
             value={addresLine2}
             onChange={(e)=>setAddresLine2(e.target.value)}
             placeholder="Addres Line 2"
             />
             <input
+            className="form-input" 
             type="text"
             value={zip}
             onChange={(e)=>setZip(e.target.value)}
@@ -93,6 +100,7 @@ export function AddNewModel(){
             required
             />
             <input
+            className="form-input" 
             type="text"
             value={city}
             onChange={(e)=>setCity(e.target.value)}
@@ -100,6 +108,7 @@ export function AddNewModel(){
             required
             />
             <input
+            className="form-input" 
             type="text"
             value={country}
             onChange={(e)=>setCountry(e.target.value)}
@@ -107,12 +116,14 @@ export function AddNewModel(){
             required
             />
            <input
-                type="date"
-                value={birthDate}
-                onChange={(e) => setBirthDate(e.target.value)}
-                required
+           className="form-input" 
+            type="date"
+            value={birthDate}
+            onChange={(e) => setBirthDate(e.target.value)}
+            required
             />
             <input
+            className="form-input" 
             type="text"
             value={nationality}
             onChange={(e)=>setNationality(e.target.value)}
@@ -120,20 +131,23 @@ export function AddNewModel(){
             required
             />
             <input
-                type="number"
-                value={height || ''}
-                onChange={(e) => setHeight(e.target.value)}
-                placeholder="Height"
-                required
+            className="form-input" 
+            type="number"
+            value={height || ''}
+            onChange={(e) => setHeight(e.target.value)}
+            placeholder="Height"
+            required
             />
             <input
-                type="number"
-                value={shoeSize || ''}
-                onChange={(e) => setShoeSize(e.target.value)}
-                placeholder="Shoe Size"
-                required
+            className="form-input" 
+            type="number"
+            value={shoeSize || ''}
+            onChange={(e) => setShoeSize(e.target.value)}
+            placeholder="Shoe Size"
+            required
             />
             <input
+            className="form-input" 
             type="text"
             value={hairColor}
             onChange={(e)=>setHairColor(e.target.value)}
@@ -154,6 +168,7 @@ export function AddNewModel(){
             placeholder="Comments"
             />                
             <input
+            className="form-input" 
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}

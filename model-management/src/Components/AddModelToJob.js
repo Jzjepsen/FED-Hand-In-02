@@ -86,12 +86,14 @@ export function AddModelToJob() {
     
 
     return (
-        <div>
+        <div className="container"> 
             <h1>Add Model to Job</h1>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="form-shared"> 
                 <label>
                     Model:
-                    <select value={selectedModel} onChange={(e) => {
+                    <select form-shared select
+                    value={selectedModel}
+                     onChange={(e) => {
                         console.log('Selected model ID:', e.target.value); // Log the selected model ID
                         setSelectedModel(e.target.value);
                             }}>
@@ -107,7 +109,10 @@ export function AddModelToJob() {
                 <br />
                 <label>
                     Job:
-                     <select value={selectedJob} onChange={(e) => {
+                     <select
+                     form-shared select
+                     value={selectedJob} 
+                     onChange={(e) => {
                         console.log('Selected job ID:', e.target.value); // Log the selected job ID
                         setSelectedJob(e.target.value);
                             }}>
@@ -120,7 +125,9 @@ export function AddModelToJob() {
                 </select>
                 </label>
                 <br />
-                <button type="submit">Add Model to Job</button>
+                <button type="submit"className="form-button">
+                    Add Model to Job
+                </button>
             </form>
         </div>
     );

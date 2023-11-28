@@ -25,9 +25,9 @@ export function ListOfJobs() {
     };
     
     return (
-        <div>
+        <div className="container"> 
             <h1>List of Jobs</h1>
-            <table>
+            <table className="table-shared"> 
                 <thead>
                     <tr>
                         <th>Customer</th>
