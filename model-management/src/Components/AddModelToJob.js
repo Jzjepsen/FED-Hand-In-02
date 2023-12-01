@@ -21,7 +21,9 @@ export function AddModelToJob() {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
-            });            // Updating the models state with the fetched data
+            });  
+            console.log('Received response data:', response.data);
+
             setModels(response.data);
         } catch (error) {
             // Handle any errors here
@@ -91,7 +93,8 @@ export function AddModelToJob() {
             <form onSubmit={handleSubmit} className="form-shared"> 
                 <label>
                     Model:
-                    <select form-shared select
+                    <select 
+                    form-shared select
                     value={selectedModel}
                      onChange={(e) => {
                         console.log('Selected model ID:', e.target.value); // Log the selected model ID
@@ -100,7 +103,7 @@ export function AddModelToJob() {
 
                     <option value="" disabled >Choose model</option>
                         {models.map(model => (
-                            <option key={model.efModelId} value={model.ModelId}>
+                            <option key={model.efModelId} value={model.efModelId}>
                                 {model.firstName} {model.lastName} - {model.email}
                             </option>
                         ))}
@@ -110,8 +113,9 @@ export function AddModelToJob() {
                 <label>
                     Job:
                      <select
-                     form-shared select
-                     value={selectedJob} 
+                    form-shared select
+                    value={selectedJob} 
+                    
                      onChange={(e) => {
                         console.log('Selected job ID:', e.target.value); // Log the selected job ID
                         setSelectedJob(e.target.value);

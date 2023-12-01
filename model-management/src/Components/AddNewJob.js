@@ -11,11 +11,14 @@ const[comments, setComments]=useState('');
 const [error, setError] = useState('');
 
     const handleSubmit = async (event) => {
+        const token = localStorage.getItem('token'); 
+
     event.preventDefault();
     const dateTime =`${startDate}T${startTime}:00.000Z`; // Adding default seconds and milliseconds
     try {
-        const response = await axios.post('https://localhost:7181/api/Jobs', {customer,startDate:dateTime,days,location,comments});
-        localStorage.setItem('token', response.data.token);
+        const response = await axios.post('http://localhost:7181/api/Jobs', {customer,startDate:dateTime,days,location,comments},
+        { headers: { 'Authorization': `Bearer ${token}` } });
+
         console.log("Job added")
     } catch (error) {
         console.error('Error submitting form:', error);
@@ -38,21 +41,21 @@ const [error, setError] = useState('');
            <input
                 className="form-input" 
                 type="date"
-                value={startDate}
+                value={startDate || '' }
                 onChange={(e) => setStartDate(e.target.value)}
+                placeholder= 'Start Date'
                 required
             />
             <input
-                        className="form-input" 
-
+                className="form-input" 
                 type="time"
-                value={startTime}
+                value={startTime ||'' }
                 onChange={(e) => setStartTime(e.target.value)}
+                placeholder='Start Time'
                 required
             />
             <input
-                        className="form-input" 
-
+                className="form-input" 
                 type="number"
                 value={days}
                 onChange={(e)=>setDays(e.target.value)}
@@ -60,8 +63,7 @@ const [error, setError] = useState('');
                 required
             />
             <input
-                        className="form-input" 
-
+                className="form-input" 
                 type="text"
                 value={location}
                 onChange={(e)=>setLocation(e.target.value)}
@@ -69,8 +71,7 @@ const [error, setError] = useState('');
                 required
             />
             <input
-                        className="form-input" 
-
+                className="form-input" 
                 type="text"
                 value={comments}
                 onChange={(e)=>setComments(e.target.value)}

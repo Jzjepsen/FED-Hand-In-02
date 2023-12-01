@@ -13,9 +13,8 @@ export function AddNewModel(){
     const[zip, setZip]=useState('');
     const[city, setCity]=useState('');
     const[country, setCountry]=useState('');
-    //const[birthDate, setBirthDate]=useState('');
     const [birthDate, setBirthDate] = useState('');
-    const [birthTime, setBirthTime] = useState('');
+    const [birthTime] = useState('');
 
     const[nationality, setNationality]=useState('');
     const[height, setHeight]=useState(0);
@@ -26,19 +25,35 @@ export function AddNewModel(){
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
+
+
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const dateTime =`${birthDate}T${birthTime}:00.000Z`; // Adding default seconds and milliseconds
+        const dateTime = `${birthDate}T${birthTime}:00.000Z`; // Make sure this format is correct
+    
         try {
-            console.log({firstName, lastName, email, phoneNo,addresLine1,addresLine2,zip,city,country,birthDate:dateTime,nationality,height,shoeSize,hairColor,eyeColor,comments, password });
-            const response = await axios.post('http://localhost:7181/api/Models', {firstName, lastName, email, phoneNo,addresLine1,addresLine2,zip,city,country,birthDate:dateTime,nationality,height,shoeSize,hairColor,eyeColor,comments, password });
-            localStorage.setItem('token', response.data.token);
-            console.log("Model added")
+            const modelDto = { // Wrap your data within a modelDto object
+                firstName, lastName, email, phoneNo, addresLine1, addresLine2, zip, 
+                city, country, birthDate: dateTime, nationality, height, 
+                shoeSize, hairColor, eyeColor, comments, password
+            };
+    
+            const token = localStorage.getItem('token');
+    
+            const response = await axios.post('http://localhost:7181/api/Models', 
+                { modelDto }, // Pass modelDto as the data
+                {headers: {'Authorization': `Bearer ${token}`}
+                }
+            );
+    
+            console.log("Model added");
         } catch (error) {
             console.error('Error submitting form:', error);
-            setError('Submit fejlede. Tjek at du har udfyldt alle de påkrævede felter.');
+            setError('Submit failed. Check that you have filled out all the required fields.');
         }
     };
+    
+    
     return (
         <div className="container"> 
             <h2>Add a new model</h2>

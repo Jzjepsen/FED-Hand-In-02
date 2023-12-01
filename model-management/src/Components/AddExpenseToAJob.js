@@ -2,34 +2,29 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 export function AddExpenseToAJob() { 
-    const [jobs, setJobs] = useState([]);
+  const [jobs, setJobs] = useState([]);
   const [selectedJobId, setSelectedJobId] = useState('');
   const [expenseText, setExpenseText] = useState('');
   const [expenseAmount, setExpenseAmount] = useState('');
-  const [modelId, setModelId] = useState(null); 
 
-
-  // FETCHING JOBS DOES NOT WORK!
   useEffect(() => {
-    if (modelId !== null) {
-      fetchJobs();
-    }
-  }, [modelId]);
+    fetchJobs();
+}, []);
 
-  const fetchJobs = async () => {
-    try {
+const fetchJobs = async () => {
+  try {
       const token = localStorage.getItem('token');
-      const response = await axios.get(`http://localhost:7181/api/Models/${modelId}/jobs`, {
-        headers: {
-          'Authorization': `Bearer ${token}`,
-        },
+      const response = await axios.get('http://localhost:7181/api/Jobs', {
+          headers: {
+              'Authorization': `Bearer ${token}`,
+              'accept': 'text/plain'
+          }
       });
-
       setJobs(response.data);
-    } catch (error) {
+  } catch (error) {
       console.error('Error fetching jobs:', error);
-    }
-  };
+  }
+};
 
 
   const handleAddExpense = async () => {
@@ -84,7 +79,7 @@ export function AddExpenseToAJob() {
             onChange={handleJobChange}>
             <option value="">Select a Job</option>
             {jobs.map((job) => (
-              <option key={job.jobId} value={job.jobId}>
+              <option key={job.efJobId} value={job.efJobId}>
                     {job.customer} - {new Date(job.startDate).toLocaleDateString()} - {job.location}
               </option>
             ))}

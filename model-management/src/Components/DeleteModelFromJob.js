@@ -99,8 +99,8 @@ export function DeleteModelFromJob() {
                     <label>
                         Job:
                         <select 
-                        form-shared select
-                        value={selectedJob} 
+                    form-shared select
+                    value={selectedJob} 
                         onChange={(e) => {
                             console.log('Selected job ID:', e.target.value);
                             setSelectedJob(e.target.value);
