@@ -54,7 +54,7 @@ export function DeleteModelFromJob() {
             const token = localStorage.getItem('token');
             const response = await axios.delete(`http://localhost:7181/api/Jobs/${jobId}/model/${modelId}`, {
                 headers: {
-                    Authorization: `Bearer ${token}`,
+                    'Authorization': `Bearer ${token}`,
                     'accept': 'text/plain'
                 }
             });

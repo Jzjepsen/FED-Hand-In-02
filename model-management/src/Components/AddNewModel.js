@@ -14,7 +14,7 @@ export function AddNewModel(){
     const[city, setCity]=useState('');
     const[country, setCountry]=useState('');
     const [birthDate, setBirthDate] = useState('');
-    const [birthTime] = useState('');
+    //const [birthTime] = useState(':00.000Z');
 
     const[nationality, setNationality]=useState('');
     const[height, setHeight]=useState(0);
@@ -29,22 +29,19 @@ export function AddNewModel(){
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const dateTime = `${birthDate}T${birthTime}:00.000Z`; // Make sure this format is correct
+        //const dateTime = `${birthDate}`; // Make sure this format is correct
     
         try {
-            const modelDto = { // Wrap your data within a modelDto object
-                firstName, lastName, email, phoneNo, addresLine1, addresLine2, zip, 
-                city, country, birthDate: dateTime, nationality, height, 
-                shoeSize, hairColor, eyeColor, comments, password
-            };
-    
-            const token = localStorage.getItem('token');
-    
             const response = await axios.post('http://localhost:7181/api/Models', 
-                { modelDto }, // Pass modelDto as the data
-                {headers: {'Authorization': `Bearer ${token}`}
+                { firstName, lastName, email, phoneNo, addresLine1, addresLine2, zip, 
+                    city, country, birthDate, nationality, height, 
+                    shoeSize, hairColor, eyeColor, comments, password }, 
+                {    headers: {
+                    'Authorization': 'Bearer ' + localStorage.getItem("token"),
+                    'accept': 'text/plain'
+                    
                 }
-            );
+            });
     
             console.log("Model added");
         } catch (error) {

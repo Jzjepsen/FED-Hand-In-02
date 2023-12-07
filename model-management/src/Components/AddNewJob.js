@@ -17,8 +17,11 @@ const [error, setError] = useState('');
     const dateTime =`${startDate}T${startTime}:00.000Z`; // Adding default seconds and milliseconds
     try {
         const response = await axios.post('http://localhost:7181/api/Jobs', {customer,startDate:dateTime,days,location,comments},
-        { headers: { 'Authorization': `Bearer ${token}` } });
-
+        {     headers: {
+            'Authorization': `Bearer ${token}`,
+            'accept': 'text/plain'
+        }
+    });
         console.log("Job added")
     } catch (error) {
         console.error('Error submitting form:', error);

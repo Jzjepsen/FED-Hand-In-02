@@ -39,13 +39,12 @@ const fetchJobs = async () => {
       const response = await axios.put(
         'http://localhost:7181/api/Expenses/1',
         expenseData,
-        {
-          headers: {
-            'Authorization': 'Bearer yourAccessTokenHere',
-            'Content-Type': 'application/json',
-          },
+        {     headers: {
+          'Authorization': 'Bearer ' + localStorage.getItem("token"),
+          'accept': 'text/plain'
         }
-      );
+      }
+    );
 
       // Assuming the response contains the updated expense data
       const updatedExpense = response.data;
